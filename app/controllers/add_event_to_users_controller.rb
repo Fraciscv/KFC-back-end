@@ -1,0 +1,2 @@
+class AddEventToUsersController < ApplicationController
+end
