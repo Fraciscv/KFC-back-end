@@ -18,8 +18,11 @@ class UsersController < ApplicationController
     end
 
     def create
-        @User = User.new(name: params[:userNameFromFrontEnd])
-        if @User.save
+        # byebug
+        @user = User.new(user_params)
+        # byebug
+        if @user.save
+            # byebug
             render json: @user, status: :accepted
         else
             render json: {errors: @user.errors.full_messages }, status: :unprocessible_entry
