@@ -28,6 +28,16 @@ class EventsController < ApplicationController
         # end
     end
 
+    def getbirthdatecontent
+        birthdate = params[:birthdate]
+
+        # first get all events [{}, {}, {}]
+        eventsFiltered = Event.where(conceptionDate: birthdate).map {|evt| evt.content}
+        
+        render json: eventsFiltered
+        # filter out the eventswhere the conceptionDate is same as birthdate => [{}, {}, {}]
+        # map out the filtered events only keeping the content => ['', '', '']
+    end
     private
 
     def event_params
