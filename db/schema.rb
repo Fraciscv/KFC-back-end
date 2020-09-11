@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 2020_09_07_015902) do
 
   create_table "events", force: :cascade do |t|
     t.date "conceptionDate"
+    t.string "year"
     t.text "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

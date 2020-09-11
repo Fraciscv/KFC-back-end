@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :add_event_to_users
   resources :events
   resources :users
-
+  
   get '/getbirthdatecontent', to: 'events#getbirthdatecontent'
   post '/getbirthdatecontent', to: 'events#getbirthdatecontent'
   

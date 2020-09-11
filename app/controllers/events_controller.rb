@@ -13,7 +13,7 @@ class EventsController < ApplicationController
     def create
         params[:events].each do |event|
     
-       Event.create(conceptionDate:event[:conceptionDate],content:event["content"])
+       Event.create(conceptionDate:event[:conceptionDate],content:event["content"],year:event["year"])
         end
 
         event=Event.where(conceptionDate:params[:events][0][:conceptionDate])

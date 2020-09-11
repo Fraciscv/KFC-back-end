@@ -2,6 +2,7 @@ class CreateEvents < ActiveRecord::Migration[6.0]
   def change
     create_table :events do |t|
       t.date :conceptionDate
+      t.string :year
       t.text :content, array: true
 
       t.timestamps
